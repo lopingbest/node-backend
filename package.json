@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopingbest/node-backend.git"
+  },
+  "keywords": [
+    "backend",
+    "app",
+    "nodejs"
+  ],
+  "author": "Galih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopingbest/node-backend/issues"
+  },
+  "homepage": "https://github.com/lopingbest/node-backend#readme"
+}
