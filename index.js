@@ -6,9 +6,13 @@ const app = express()
 //middleware express
 app.use(bodyParser.urlencoded({extended:false}))
 
+//route import
+const userRoute = require('./src/routes/users')
+app.use('/users',userRoute)
+
 
 app.get('/',(req,res)=>{
-    //impement code
+    //implement code
     const data= {
         success: true,
         message:"Backend is running well and started nodemon"
