@@ -17,3 +17,10 @@ exports.createUsersModel = (data, cb)=>{
          cb(results)
      })
 }
+
+exports.updateUsersModel = (id, data, cb) => {
+    db.query(`UPDATE users SET name='${data.name}', birthdate='${data.birthdate}', phone='${data.phone}' WHERE id= ${id}`,(err,results,_fields)=>{
+         if(err)throw new Error(err)
+         cb(results)
+     })
+}
