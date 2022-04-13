@@ -1,4 +1,4 @@
-const {listUsersModel,createUsersModel} = require('../models/users');
+const {listUsersModel,createUsersModel,updateUsersModel} = require('../models/users');
 
 exports.listUser = (req,res)=>{
     listUsersModel(results =>{
@@ -24,5 +24,21 @@ exports.createUser=(req,res)=>{
                 message: 'Failed to create user'
             })
         }
+    })
+}
+
+exports.updateUser=(req,res)=>{
+    updateUsersModel(req.params.id, req.body, results =>{
+        if(results.affectedRows > 0 ){
+            return res.send({
+                success: true,
+                message: "Update user successfully",
+            })
+        }else{
+            return res.send({
+                success: false,
+                message: 'Failed to update user'
+            })
+        }       
     })
 }
