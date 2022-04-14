@@ -24,3 +24,10 @@ exports.updateUsersModel = (id, data, cb) => {
          cb(results)
      })
 }
+
+exports.deleteUsersModel = (id, cb)=>{
+    db.query(`DELETE FROM users WHERE id=${id}`,(err,results,_fields)=>{
+        if (err) throw new error(err)
+        cb(results)
+    })
+}
