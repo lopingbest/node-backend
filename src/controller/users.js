@@ -1,4 +1,4 @@
-const {listUsersModel,createUsersModel,updateUsersModel} = require('../models/users');
+const {listUsersModel,createUsersModel,updateUsersModel,deleteUsersModel} = require('../models/users');
 
 exports.listUser = (req,res)=>{
     listUsersModel(results =>{
@@ -41,4 +41,20 @@ exports.updateUser=(req,res)=>{
             })
         }       
     })
+}
+
+exports.deleteUser=(req,res)=>{
+    deleteUsersModel(req.params.id, results=>{
+        if(results.affectedRows > 0 ){
+            return res.send({
+                success: true,
+                message: "User has been deleted",
+            })
+        }else{
+            return res.send({
+                success: false,
+                message: 'Failed to delete user'
+            })
+        }       
+    })       
 }
